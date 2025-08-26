@@ -1,3 +1,8 @@
+body {
+  background-attachment: scroll !important;
+  background-size: cover;
+  background-position: center;
+}
 
 .profile-header {
   flex-direction: column; 
