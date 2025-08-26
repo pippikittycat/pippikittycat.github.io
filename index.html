@@ -1,17 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>My Hobby Hub</title>
-    </head>
-    <body>
-        <h1>Welcome!</h1>
-        <p>Select where you'd like to go:</p>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Studio of Brittney Farris</title>
+        <style>
 
-        <ul>
-            <p><a href ="./blogs/">Blogs</a></p>
-            <p><a href ="./socials/">Social Media</a></p>
-            <p><a href ="./resume/">Resume</a></p>
-            <p><a href ="./employment/">Employment History</a></p>
-        </ul>
-    </body>
+            /* Global Style */
+            body {
+                margin: 0;
+                font-family: "Georgia", serif;
+                background: #f5f1eb;
+                color: #333;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            /* Decorative Background */
+            body::before {
+                content: "";
+                position: fixed;
+                top: -100px;
+                right: -100px;
+                width: -100px;
+                height: 300px;
+                background: radial-gradient(circle at center, #d8c3a5, transparent 70%);
+                border-radius: 50%;
+                z-index: -1;
+            }
+
+            body::after {
+                content: "";
+                position: fixed;
+                bottom: -120px;
+                left: -120px;
+                width: 280px;
+                height: 280px;
+                background: radial-gradient(circle at center, #e0b7a4, transparent 70%);
+                border-radius: 50%;
+                z-index: -1;
+            }
+
+            /* Header */
+            header {
+                display:flex;
+                align-items: center;
+                padding: 20px;
+            }
+            .profile-pic {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: #ccc; /*placeholder*/
+                margin-right: 15px;
+            }
+            .title {
+                font-size: 1.8rem;
+                font-weight: bold;
+            }
+            .tagline {
+                font-size: 1rem;
+                color: #666;
+            }
+
+            /* Main */
+            main {
+                text-align: center;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .button-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+                max-width: 700px;
+                margin: 0 auto;
+                padding: 20px;
+                opacity: 0; /*for fade in*/
+                animation: fadeIn 1.5s forwards;
+            }
+            .nav-button {
+                background-color: #d4c0a8;
+                color: #333;
+                padding: 15px;
+                border-radius: 15px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: all 0.3s ease;
+                display: block;
+            }
+            .nav-button:hover {
+                background-color: #c7926c;
+                color: #fff;
+                transform: scale(1.05);
+                box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            }
+
+            /* Footer */
+            footer {
+                text-align: center;
+                padding:20px;
+                font-size: 0.9rem;
+            }
+
+            .footer-button {
+                background-color: #c7926c;
+                color: white;
+                padding: 8px 16px;
+                border-radius: 10px;
+                text-decoration: none;
+                margin-left: 10px;
+                transition: all 0.3s ease;
+            }
+
+            .footer-button:hover {
+                background-color: #a66d49;
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+
+            /* Animation */
+            @keyframes fadeIn {
+                to {opacity: 1;}
+            }
+        </style>
+        </head>
+        <body>
+            <!-- Header -->
+             <header>
+                <div class="profile-pic"></div>
+                <div>
+                    <div class="title">The Studio of Brittney Farris</div>
+                    <div class="tagline">Developer • Creator • Maker of Many Things</div>
+                </div>
+             </header>
+
+             <!-- Main -->
+              <main>
+                <div class="button-grid">
+                    <a href="./blogs/" class="nav-button">📚 Blogs</a>
+                    <a href="./resume/" class="nav-button">📄 Resume</a>
+                    <a href="./employment/" class="nav-button">💼 Employment History</a>
+                    <a href="./projects/" class="nav-button">🛠️ Projects</a>
+                    <a href="./now/" class="nav-button">⏳ What I'm Working on Now</a>
+                    <a href="./socials/" class="nav-button">🌐 Social Media</a>
+                </div>
+              </main>
+            
+            <!-- Footer -->
+             <footer>
+                © 2025 Jane Doe 
+                <a href="mailto:junk.stable342@passinbox.com" class="footer-button">Email Me!</a>
+             </footer>
+        </body>
 </html>
