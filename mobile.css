@@ -1,0 +1,31 @@
+/* mobile.css */
+
+/* Profile header adjustments */
+.profile-header {
+  flex-direction: column;   /* stack image + text vertically */
+  align-items: center;
+  text-align: center;
+}
+
+.profile-header img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px; /* centered + some spacing */
+}
+
+.button-grid {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+footer {
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+
+footer a {
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}

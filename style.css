@@ -21,6 +21,7 @@ body {
   font-family: sans-serif;
   background-attachment: fixed;
   background-color: #fff;
+  color: #333;
 }
 
 
@@ -35,9 +36,6 @@ body::before {
   pointer-events: none;
   z-index: 0;
 }
-
-
-
 
 .container {
   display: flex;
@@ -60,6 +58,7 @@ body::before {
   z-index: 1;
 }
 
+/* PROFILE HEADER */
 .profile-header {
   display: flex;
   justify-content: center;
@@ -68,16 +67,15 @@ body::before {
   margin-bottom: 40px;
   margin-top: 70px;
 }
-
 .profile-header img {
   width: 200px;
+  position: relative;
   height: 200px;
   border-radius: 50%;
   border: 1px solid #4c331b;
   object-fit: cover;
-  margin-left: 20px;
+  margin-left: -100px;
 }
-
 .profile-header h1 {
   font-family: "Novar", serif;
   font-weight: lighter;
@@ -87,8 +85,10 @@ body::before {
   text-align: left;
   line-height: 1.2;
   letter-spacing: 3px;
+  position: relative;
+  margin-left: 50px;
+  
 }
-
 .bigger {
   display: block;
   font-size: 3.2rem;
@@ -96,7 +96,6 @@ body::before {
   letter-spacing: 1.5px;
   font-family: "Priestacy", serif;
 }
-
 .smaller {
    font-family: 'Raleway', sans-serif;
    font-size: 1.1rem;
@@ -104,6 +103,7 @@ body::before {
    letter-spacing: 1px;
 }
 
+/* BUTTON GRID */
 .button-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -111,10 +111,12 @@ body::before {
   max-width: 800px;
   margin: 0 auto 40px;
 }
-
 .button-grid a {
-  display: block;
+  display: flex;
   padding: 15px;
+  justify-content: center;
+  height: 100px;
+  padding:15px;
   font-size: 1.2rem;
   font-family: 'Raleway', sans-serif;
   text-decoration: none;
@@ -126,12 +128,12 @@ body::before {
   text-align: center;
   font-weight: 500;
 }
-
 .button-grid a:hover {
   background: #e6d5c3;
   transform: scale(1.05);
 }
 
+/* FOOTER */
 footer {
   display: flex;
   justify-content: center;  
@@ -141,20 +143,24 @@ footer {
   margin-top: -25px;
   font-size: 0.9rem;
   color: #555;
+  text-align:center;
+  flex-wrap: wrap;
 }
-
+footer p {
+    margin:0;
+}
 footer a {
+  display: inline-block;
   padding: 10px 16px;
   background: #c8a27e;
   color: white;
   border-radius: 8px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   margin: 0;
+  font-size: 1rem;
 }
-
 footer a:hover {
   background: #a67c52;
   transform: scale(1.05);
 }
-
