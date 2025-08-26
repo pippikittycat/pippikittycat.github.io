@@ -1,174 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Studio of Brittney Farris</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Nunito Sans', sans-serif;
-      background: #fdfaf5 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      background-size: 300px;
-      color: #3a2c27;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      text-align: center;
-      position: relative;
-      overflow-x: hidden;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Studio of Brittney Farris</title>
 
-    /* Decorative elements */
-    .decor {
-      position: absolute;
-      opacity: 0.25;
-      z-index: -1;
-    }
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet" />
 
-    .rainbow {
-      top: 1rem;
-      right: 1rem;
-      width: 180px;
-    }
+<style>
+  :root{
+    --bg: #fbf7f2;          /* light paper */
+    --ink: #3a2c27;         /* deep brown text */
+    --muted: #7b6d63;       /* subtitle */
+    --btn: #eadfce;         /* pill button */
+    --btn-hover: #dfcfba;   /* pill hover */
+    --email: #b7653b;       /* footer button */
+    --email-hover:#9c512f;
+  }
 
-    .circle {
-      bottom: 2rem;
-      left: 2rem;
-      width: 120px;
-    }
+  /* ===== Base ===== */
+  html,body{height:100%}
+  body{
+    margin:0;
+    color:var(--ink);
+    background: var(--bg);
+    font-family:"Nunito Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+    position:relative;
+  }
 
-    .coffee {
-      bottom: 4rem;
-      right: 3rem;
-      width: 150px;
-      transform: rotate(-10deg);
-    }
+  /* Paper / watercolor texture (very subtle, no external image) */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(rgba(0,0,0,.03) 1px, transparent 1px) 0 0/3px 3px,
+      radial-gradient(rgba(0,0,0,.02) 1px, transparent 1px) 1.5px 1.5px/4px 4px,
+      linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255,0) 30%, rgba(0,0,0,.02) 100%);
+    opacity:.55;
+    z-index:0;
+  }
 
-    header {
-      margin-top: 4rem;
-    }
+  /* ===== Decorative SVGs ===== */
+  .decor{position:absolute; opacity:.35; z-index:0; pointer-events:none;}
+  .blob-tl{top:-90px; left:-120px; width:420px;}
+  .rainbow-tr{top:70px; right:60px; width:160px;}
+  .circles-bl{left:60px; bottom:60px; width:220px; opacity:.28;}
+  .blob-br{right:-120px; bottom:-120px; width:520px; opacity:.22;}
 
-    .profile {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-    }
+  /* ===== Layout container ===== */
+  .wrap{width:100%; max-width:1000px; margin:0 auto; padding:48px 24px; position:relative; z-index:1;}
 
-    .profile img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #d6bfa7;
-    }
+  /* ===== Header / Title ===== */
+  header{display:flex; align-items:center; justify-content:flex-start; gap:16px; margin-top:24px; margin-bottom:24px;}
+  .avatar{
+    width:92px; height:92px; border-radius:50%;
+    object-fit:cover; flex:0 0 auto; border:2px solid #d6bfa7;
+    background:#e8e0d4; /* placeholder background until you add a photo */
+  }
+  .titleblock small{
+    display:block; font-family:"Playfair Display", serif; font-weight:600;
+    font-size:15px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  }
+  .titleblock h1{
+    margin:.15rem 0 .35rem; font-family:"Playfair Display", serif;
+    font-weight:700; font-size:56px; line-height:1.05; letter-spacing:.01em;
+  }
+  .tagline{font-size:18px; color:var(--muted);}
 
-    .title small {
-      display: block;
-      font-size: 1.1rem;
-      font-family: 'Playfair Display', serif;
-      color: #7b6d63;
-    }
+  /* ===== Button Grid ===== */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));  /* 3 columns desktop */
+    gap:18px 22px;
+    max-width:760px;
+    margin:44px auto 24px;
+    justify-items:center;
+  }
+  @media (max-width: 900px){
+    .grid{grid-template-columns: repeat(2, minmax(0,1fr));}
+  }
+  @media (max-width: 560px){
+    header{flex-direction:column; align-items:center; text-align:center;}
+    .grid{grid-template-columns: 1fr;}
+  }
 
-    .title h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      margin: 0.2rem 0;
-      color: #3a2c27;
-    }
+  .pill{
+    display:inline-block; text-decoration:none; text-align:center;
+    min-width:220px; padding:14px 18px; border-radius:16px;
+    background:var(--btn); color:var(--ink); font-weight:600; font-size:16px;
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+    transition:transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+  }
+  .pill:hover{ background:var(--btn-hover); transform:translateY(-2px) scale(1.03); box-shadow:0 8px 18px rgba(0,0,0,.12); }
 
-    .subtitle {
-      font-size: 1rem;
-      color: #5e514a;
-      font-weight: 500;
-    }
+  /* ===== Footer ===== */
+  footer{margin-top:auto; text-align:center; padding:18px 16px 28px; color:#6e5e56;}
+  .email{
+    display:inline-block; margin-top:10px; padding:9px 16px; border-radius:999px;
+    background:var(--email); color:#fff; font-weight:700; text-decoration:none;
+    transition:transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+  }
+  .email:hover{background:var(--email-hover); transform:translateY(-1px) scale(1.04); box-shadow:0 8px 16px rgba(0,0,0,.18);}
 
-    /* Grid Buttons */
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.2rem;
-      padding: 2rem;
-      max-width: 850px;
-      margin: 3rem auto;
-    }
-
-    .button-grid a {
-      text-decoration: none;
-      padding: 1rem 1.5rem;
-      background: #d6bfa7;
-      color: #3a2c27;
-      font-weight: 600;
-      border-radius: 999px;
-      transition: all 0.2s ease;
-      font-size: 1.1rem;
-      font-family: 'Nunito Sans', sans-serif;
-      display: inline-block;
-    }
-
-    .button-grid a:hover {
-      background: #c2a88f;
-      transform: scale(1.05);
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #6e5e56;
-    }
-
-    .email-button {
-      display: inline-block;
-      background: #b35c2e;
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      margin-top: 0.5rem;
-    }
-
-    .email-button:hover {
-      background: #964924;
-      transform: scale(1.05);
-    }
-  </style>
+</style>
 </head>
 <body>
-  <!-- Decorative Images -->
-  <img src="https://i.imgur.com/9pQ8h1D.png" alt="decorative rainbow" class="decor rainbow">
-  <img src="https://i.imgur.com/R6VQlQp.png" alt="decorative circle" class="decor circle">
-  <img src="https://i.imgur.com/qF0DQjF.png" alt="coffee stain" class="decor coffee">
 
+<!-- Decorative shapes (inline SVGs) -->
+<svg class="decor blob-tl" viewBox="0 0 600 450" aria-hidden="true">
+  <path d="M80 180c40-120 200-170 300-120s120 160 30 240-220 110-300 60-70-80-30-180z"
+        fill="#e5c7a4"/>
+  <path d="M140 160c30-70 150-100 220-70s80 110 20 160-160 80-220 44-50-56-20-134z"
+        fill="#d9b189"/>
+</svg>
+
+<svg class="decor rainbow-tr" viewBox="0 0 120 90" aria-hidden="true">
+  <path d="M10 75a50 50 0 1 1 100 0" fill="none" stroke="#cd8f5d" stroke-width="14" stroke-linecap="round"/>
+  <path d="M22 75a38 38 0 1 1 76 0" fill="none" stroke="#e0b895" stroke-width="12" stroke-linecap="round"/>
+  <path d="M34 75a26 26 0 1 1 52 0"  fill="none" stroke="#f0d8bf" stroke-width="10" stroke-linecap="round"/>
+</svg>
+
+<svg class="decor circles-bl" viewBox="0 0 220 220" aria-hidden="true">
+  <circle cx="80" cy="140" r="38" fill="#e8cfb4"/>
+  <circle cx="160" cy="170" r="56" fill="none" stroke="#e0b895" stroke-width="24" opacity=".7"/>
+</svg>
+
+<svg class="decor blob-br" viewBox="0 0 700 480" aria-hidden="true">
+  <path d="M520 360c-60 70-220 120-320 70S30 290 90 220s210-60 300-20 190 90 130 160z"
+        fill="#edd8c1"/>
+</svg>
+
+<!-- Content -->
+<div class="wrap">
   <header>
-    <div class="profile">
-      <img src="https://via.placeholder.com/90" alt="Profile Photo">
-      <div class="title">
-        <small>The Studio of</small>
-        <h1>Brittney Farris</h1>
-        <div class="subtitle">Developer • Maker • Creator</div>
-      </div>
+    <img class="avatar" src="https://via.placeholder.com/180x180.png?text=Profile+Photo" alt="Profile photo placeholder" />
+    <div class="titleblock">
+      <small>The Studio of</small>
+      <h1>Brittney Farris</h1>
+      <div class="tagline">Developer • Maker • Creator</div>
     </div>
   </header>
 
-  <main>
-    <div class="button-grid">
-      <a href="#">Blogs</a>
-      <a href="#">Resume</a>
-      <a href="#">Employment History</a>
-      <a href="#">Projects / Portfolio</a>
-      <a href="#">What I'm Working on Now</a>
-      <a href="#">Social Media</a>
-    </div>
+  <main class="grid">
+    <a class="pill" href="./blogs/">Blogs</a>
+    <a class="pill" href="./resume/">Resume</a>
+    <a class="pill" href="./employment/">Employment History</a>
+    <a class="pill" href="./projects/">Projects / Portfolio</a>
+    <a class="pill" href="./now/">What I'm Working on Now</a>
+    <a class="pill" href="./socials/">Social Media</a>
   </main>
 
   <footer>
-    <p>© 2025 Brittney Farris</p>
-    <a class="email-button" href="mailto:junk.stable342@passinbox.com">Email Me!</a>
+    <div>© 2025 Brittney Farris</div>
+    <a class="email" href="mailto:youremail@example.com">Email Me</a>
   </footer>
+</div>
 </body>
 </html>
