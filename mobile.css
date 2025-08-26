@@ -1,16 +1,27 @@
-/* mobile.css */
 
-/* Profile header adjustments */
 .profile-header {
-  flex-direction: column;   /* stack image + text vertically */
+  flex-direction: column; 
   align-items: center;
   text-align: center;
 }
 
 .profile-header img {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 15px; /* centered + some spacing */
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 15px; 
+}
+
+.profile-header h1 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.bigger {
+  font-size: 2.1rem;
+}
+
+.smaller {
+  font-size: 0.95rem;
 }
 
 .button-grid {
@@ -21,7 +32,7 @@
 footer {
   flex-direction: column;
   text-align: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 footer a {
