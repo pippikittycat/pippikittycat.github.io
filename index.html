@@ -1,172 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>The Studio of Brittney Farris</title>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
-        <style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Studio of Brittney Farris</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito Sans', sans-serif;
+      background: #fdfaf5 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-size: 300px;
+      color: #3a2c27;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-            /* Global Style */
-            body {
-                margin: 0;
-                font-family: 'Nunito', sans-serif;
-                background: #f9f4ef url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-                background-size: auto;
-                color: #3a2c27;
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                overflow-x: hidden;
-            }
+    /* Decorative elements */
+    .decor {
+      position: absolute;
+      opacity: 0.25;
+      z-index: -1;
+    }
 
-            /* Decorative Shapes */
-            .shape {
-                position: absolute;
-                opacity: 0.25;
-                z-index: 0;
-            }
-            .shape.rainbow {
-                top: 2rem;
-                right: 2rem;
-                width: 120px;
-            }
-            .shape.circle {
-                bottom: 4rem;
-                left: 2rem;
-                width: 150px;
-            }
+    .rainbow {
+      top: 1rem;
+      right: 1rem;
+      width: 180px;
+    }
 
-            /* Header */
-            header {
-                display:flex;
-                align-items: center;
-                padding: 2rem;
-                z-index: 1;
-            }
-            .profile-pic {
-                width: 90px;
-                height: 90px;
-                border-radius: 50%;
-                margin-right: 1rem;
-                object-fit: cover;
-            }
-            .title-block {
-                display: flex;
-                flex-direction: column;
-            }
-            .subtitle {
-                font-family: 'Playfair Display', serif;
-                font-size: 1rem;
-                letter-spacing: 1px;
-            }
-            .main-title {
-                font-family: 'Playfair Display', serif;
-                font-size: 2.5rem;
-                margin: 0.2rem 0;
-            }
-            .tagline {
-                font-size: 1rem;
-                color: #5c4c44;
-            }
+    .circle {
+      bottom: 2rem;
+      left: 2rem;
+      width: 120px;
+    }
 
-            /* Buttons */
-            .links {
-                flex: 1;
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                gap: 1rem;
-                justify-items: center;
-                align-items: center;
-                padding: 2rem;
-                z-index: 1;
-            }
-            .links a {
-                background: #e8dccb;
-                padding: 1rem 1.5rem;
-                text-align: center;
-                font-size: 1.1rem;
-                font-weight: 600;
-                color:#3a2c27;
-                border-radius: 12px;
-                text-decoration: none;
-                font-family: 'Nunito', sans-serif;
-                transition: all 0.2s ease-in-out;
-                width: 100%;
-                max-width: 220px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            .links a:hover {
-                background: #d9c7b0;
-                transform: scale(1.05);
-            }
+    .coffee {
+      bottom: 4rem;
+      right: 3rem;
+      width: 150px;
+      transform: rotate(-10deg);
+    }
 
-            /* Footer */
-            footer {
-                text-align: center;
-                padding:1rem;
-                background: transparent;
-                z-index: 1;
-            }
-            footer p {
-                margin: 0.5rem 0;
-                font-size: 0.9rem;
-            }
-            .email-btn {
-                background: #d99873;
-                color: white;
-                padding: 0.5rem 1rem;
-                border: none;
-                border-radius: 8px;
-                cursor: pointer;
-                font-family: 'Nunito', sans-serif;
-                font-size: 0.9rem;
-                transition: all 0.2s ease-in-out;
-            }
-            .email-btn:hover {
-                background: #c98560;
-                transform: scale(1.05);
-            }
-        </style>
-        </head>
-        <body>
-            <!-- Background Shapes-->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/OOjs_UI_icon_userAvatar.svg" class="shape circle" alt="decorative circle">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/OOjs_UI_icon_rainbow.svg/2048px-OOjs_UI_icon_rainbow.svg.png" class="shape rainbow" alt="decorative rainbow">
-            
-            <!-- Header -->
-             <header>
-                <div class="profile-pic"></div>
-                <div>
-                    <div class="title">The Studio of Brittney Farris</div>
-                    <div class="tagline">Developer • Creator • Maker of Many Things</div>
-                </div>
-             </header>
+    header {
+      margin-top: 4rem;
+    }
 
-             <!-- Main -->
-              <header>
-                <img src="https://via.placeholder.com/90" alt="Profile" class="profile-pic">
-                <div class="title-block">
-                    <span class="subtitle">The Studio of</span>
-                    <h1 class="main-title">Brittney Farris</h1>
-                    <span class="tagline">Developer • Maker • Creator</span>
-                </div>
-              </header>
-            
-            <!-- Links -->
-             <main class="links">
-                <a href="#">Blogs</a>
-                <a href="#">Resume</a>
-                <a href="#">Employment History</a>
-                <a href="#">Projects / Portfolio</a>
-                <a href="#">What I'm Working on Now</a>
-             </main>
-            
-            <!-- Footer -->
-             <footer>
-                <p>© 2025 Jane Doe</p>p>
-                <button class="email-btn" onclick="window.location.href='mailto:janedoe@email.com'">Email Me!</button>
-             </footer>
-        </body>
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .profile img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #d6bfa7;
+    }
+
+    .title small {
+      display: block;
+      font-size: 1.1rem;
+      font-family: 'Playfair Display', serif;
+      color: #7b6d63;
+    }
+
+    .title h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin: 0.2rem 0;
+      color: #3a2c27;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #5e514a;
+      font-weight: 500;
+    }
+
+    /* Grid Buttons */
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+      padding: 2rem;
+      max-width: 850px;
+      margin: 3rem auto;
+    }
+
+    .button-grid a {
+      text-decoration: none;
+      padding: 1rem 1.5rem;
+      background: #d6bfa7;
+      color: #3a2c27;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+      font-size: 1.1rem;
+      font-family: 'Nunito Sans', sans-serif;
+      display: inline-block;
+    }
+
+    .button-grid a:hover {
+      background: #c2a88f;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #6e5e56;
+    }
+
+    .email-button {
+      display: inline-block;
+      background: #b35c2e;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      margin-top: 0.5rem;
+    }
+
+    .email-button:hover {
+      background: #964924;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Decorative Images -->
+  <img src="https://i.imgur.com/9pQ8h1D.png" alt="decorative rainbow" class="decor rainbow">
+  <img src="https://i.imgur.com/R6VQlQp.png" alt="decorative circle" class="decor circle">
+  <img src="https://i.imgur.com/qF0DQjF.png" alt="coffee stain" class="decor coffee">
+
+  <header>
+    <div class="profile">
+      <img src="https://via.placeholder.com/90" alt="Profile Photo">
+      <div class="title">
+        <small>The Studio of</small>
+        <h1>Brittney Farris</h1>
+        <div class="subtitle">Developer • Maker • Creator</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="button-grid">
+      <a href="#">Blogs</a>
+      <a href="#">Resume</a>
+      <a href="#">Employment History</a>
+      <a href="#">Projects / Portfolio</a>
+      <a href="#">What I'm Working on Now</a>
+      <a href="#">Social Media</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Brittney Farris</p>
+    <a class="email-button" href="mailto:junk.stable342@passinbox.com">Email Me!</a>
+  </footer>
+</body>
 </html>
