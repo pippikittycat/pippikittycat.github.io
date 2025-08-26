@@ -4,132 +4,137 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>The Studio of Brittney Farris</title>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
         <style>
 
             /* Global Style */
             body {
                 margin: 0;
-                font-family: "Georgia", serif;
-                background: #f5f1eb;
-                color: #333;
+                font-family: 'Nunito', sans-serif;
+                background: #f9f4ef url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+                background-size: auto;
+                color: #3a2c27;
                 min-height: 100vh;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                position: relative;
+                overflow-x: hidden;
             }
 
-            /* Decorative Background */
-            body::before {
-                content: "";
-                position: fixed;
-                top: -100px;
-                right: -100px;
-                width: -100px;
-                height: 300px;
-                background: radial-gradient(circle at center, #d8c3a5, transparent 70%);
-                border-radius: 50%;
-                z-index: -1;
+            /* Decorative Shapes */
+            .shape {
+                position: absolute;
+                opacity: 0.25;
+                z-index: 0;
             }
-
-            body::after {
-                content: "";
-                position: fixed;
-                bottom: -120px;
-                left: -120px;
-                width: 280px;
-                height: 280px;
-                background: radial-gradient(circle at center, #e0b7a4, transparent 70%);
-                border-radius: 50%;
-                z-index: -1;
+            .shape.rainbow {
+                top: 2rem;
+                right: 2rem;
+                width: 120px;
+            }
+            .shape.circle {
+                bottom: 4rem;
+                left: 2rem;
+                width: 150px;
             }
 
             /* Header */
             header {
                 display:flex;
                 align-items: center;
-                padding: 20px;
+                padding: 2rem;
+                z-index: 1;
             }
             .profile-pic {
-                width: 60px;
-                height: 60px;
+                width: 90px;
+                height: 90px;
                 border-radius: 50%;
-                background: #ccc; /*placeholder*/
-                margin-right: 15px;
+                margin-right: 1rem;
+                object-fit: cover;
             }
-            .title {
-                font-size: 1.8rem;
-                font-weight: bold;
+            .title-block {
+                display: flex;
+                flex-direction: column;
+            }
+            .subtitle {
+                font-family: 'Playfair Display', serif;
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+            .main-title {
+                font-family: 'Playfair Display', serif;
+                font-size: 2.5rem;
+                margin: 0.2rem 0;
             }
             .tagline {
                 font-size: 1rem;
-                color: #666;
+                color: #5c4c44;
             }
 
-            /* Main */
-            main {
-                text-align: center;
+            /* Buttons */
+            .links {
                 flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            .button-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-                max-width: 700px;
-                margin: 0 auto;
-                padding: 20px;
-                opacity: 0; /*for fade in*/
-                animation: fadeIn 1.5s forwards;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1rem;
+                justify-items: center;
+                align-items: center;
+                padding: 2rem;
+                z-index: 1;
             }
-            .nav-button {
-                background-color: #d4c0a8;
-                color: #333;
-                padding: 15px;
-                border-radius: 15px;
+            .links a {
+                background: #e8dccb;
+                padding: 1rem 1.5rem;
+                text-align: center;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color:#3a2c27;
+                border-radius: 12px;
                 text-decoration: none;
-                font-weight: bold;
-                transition: all 0.3s ease;
-                display: block;
+                font-family: 'Nunito', sans-serif;
+                transition: all 0.2s ease-in-out;
+                width: 100%;
+                max-width: 220px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
-            .nav-button:hover {
-                background-color: #c7926c;
-                color: #fff;
+            .links a:hover {
+                background: #d9c7b0;
                 transform: scale(1.05);
-                box-shadow: 0 6px 12px rgba(0,0,0,0.15);
             }
 
             /* Footer */
             footer {
                 text-align: center;
-                padding:20px;
+                padding:1rem;
+                background: transparent;
+                z-index: 1;
+            }
+            footer p {
+                margin: 0.5rem 0;
                 font-size: 0.9rem;
             }
-
-            .footer-button {
-                background-color: #c7926c;
+            .email-btn {
+                background: #d99873;
                 color: white;
-                padding: 8px 16px;
-                border-radius: 10px;
-                text-decoration: none;
-                margin-left: 10px;
-                transition: all 0.3s ease;
+                padding: 0.5rem 1rem;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-family: 'Nunito', sans-serif;
+                font-size: 0.9rem;
+                transition: all 0.2s ease-in-out;
             }
-
-            .footer-button:hover {
-                background-color: #a66d49;
+            .email-btn:hover {
+                background: #c98560;
                 transform: scale(1.05);
-                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            }
-
-            /* Animation */
-            @keyframes fadeIn {
-                to {opacity: 1;}
             }
         </style>
         </head>
         <body>
+            <!-- Background Shapes-->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/OOjs_UI_icon_userAvatar.svg" class="shape circle" alt="decorative circle">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/OOjs_UI_icon_rainbow.svg/2048px-OOjs_UI_icon_rainbow.svg.png" class="shape rainbow" alt="decorative rainbow">
+            
             <!-- Header -->
              <header>
                 <div class="profile-pic"></div>
@@ -140,21 +145,28 @@
              </header>
 
              <!-- Main -->
-              <main>
-                <div class="button-grid">
-                    <a href="./blogs/" class="nav-button">📚 Blogs</a>
-                    <a href="./resume/" class="nav-button">📄 Resume</a>
-                    <a href="./employment/" class="nav-button">💼 Employment History</a>
-                    <a href="./projects/" class="nav-button">🛠️ Projects</a>
-                    <a href="./now/" class="nav-button">⏳ What I'm Working on Now</a>
-                    <a href="./socials/" class="nav-button">🌐 Social Media</a>
+              <header>
+                <img src="https://via.placeholder.com/90" alt="Profile" class="profile-pic">
+                <div class="title-block">
+                    <span class="subtitle">The Studio of</span>
+                    <h1 class="main-title">Brittney Farris</h1>
+                    <span class="tagline">Developer • Maker • Creator</span>
                 </div>
-              </main>
+              </header>
+            
+            <!-- Links -->
+             <main class="links">
+                <a href="#">Blogs</a>
+                <a href="#">Resume</a>
+                <a href="#">Employment History</a>
+                <a href="#">Projects / Portfolio</a>
+                <a href="#">What I'm Working on Now</a>
+             </main>
             
             <!-- Footer -->
              <footer>
-                © 2025 Jane Doe 
-                <a href="mailto:junk.stable342@passinbox.com" class="footer-button">Email Me!</a>
+                <p>© 2025 Jane Doe</p>p>
+                <button class="email-btn" onclick="window.location.href='mailto:janedoe@email.com'">Email Me!</button>
              </footer>
         </body>
 </html>
