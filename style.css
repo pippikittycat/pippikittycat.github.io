@@ -223,23 +223,3 @@ footer a:hover {
   color: #444;
   margin-top: 0.5rem;
 }
-footer {
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  border-radius: 12px;
-  font-size: 0.9rem;
-}
-footer a {
-  margin-left: 1rem;
-  background: #d6bfa7;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #3c2a1e;
-  font-weight: bold;
-  transition: background 0.2s ease;
-}
-footer a:hover {
-  background: #c3a98d;
-}
