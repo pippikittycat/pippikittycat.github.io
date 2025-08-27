@@ -35,5 +35,46 @@
     <p>© 2025 Brittney Farris</p>
     <a href="mailto:junk.stable342@passinbox.com">Email Me!</a>
   </footer>
+  <style>
+  body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+  }
+</style>
+
+<script>
+  const container = document.querySelector(".container");
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let currentX = mouseX, currentY = mouseY;
+
+  function animate() {
+    // Smooth easing toward mouse
+    currentX += (mouseX - currentX) * 0.05;
+    currentY += (mouseY - currentY) * 0.05;
+
+    // Map mouse to a very small translation range (-4px to +4px)
+    const moveX = (currentX / window.innerWidth - 0.5) * 8;
+    const moveY = (currentY / window.innerHeight - 0.5) * 8;
+
+    container.style.transform = `translate(${moveX}px, ${moveY}px)`;
+
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // Reset gently to center when mouse leaves window
+  window.addEventListener("mouseleave", () => {
+    mouseX = window.innerWidth / 2;
+    mouseY = window.innerHeight / 2;
+  });
+
+  animate();
+</script>
 </body>
 </html>
