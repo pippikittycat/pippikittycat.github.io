@@ -12,6 +12,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Dropline";
+  src: url("fonts/DroplineRegular-Wpegz.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -65,7 +72,7 @@ body::before {
   align-items: center;
   gap: 20px;
   margin-bottom: 40px;
-  margin-top: 70px;
+  margin-top: 60px;
 }
 .profile-header img {
   width: 200px;
@@ -91,7 +98,7 @@ body::before {
 }
 .bigger {
   display: block;
-  font-size: 3.2rem;
+  font-size: 4rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   font-family: "Priestacy", serif;
@@ -113,20 +120,20 @@ body::before {
 }
 .button-grid a {
   display: flex;
-  padding: 15px;
   justify-content: center;
-  height: 100px;
-  padding:15px;
-  font-size: 1.2rem;
-  font-family: 'Raleway', sans-serif;
+  align-items: center;
+  padding: 18px 20px;
+  font-size: 1.5rem;
+  font-family: "Dropline", sans-serif;
   text-decoration: none;
   background: #f0e4d7;
-  color: #333;
-  border-radius: 12px;
-  box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+  color: #4c331b;
+  border-radius: 18px;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
+  min-height: 50px;
 }
 .button-grid a:hover {
   background: #e6d5c3;
@@ -144,6 +151,7 @@ footer {
   font-size: 0.9rem;
   color: #555;
   text-align:center;
+  font-family: 'Raleway', sans-serif;
   flex-wrap: wrap;
 }
 footer p {
@@ -159,6 +167,7 @@ footer a {
   transition: all 0.3s ease-in-out;
   margin: 0;
   font-size: 1rem;
+  font-family: "Dropline", sans-serif;
 }
 footer a:hover {
   background: #a67c52;
