@@ -83,3 +83,31 @@ footer a {
   border-radius: 14px;
   font-size: 1.5rem;
 }
+
+/* -----PORTFOLIO----- */
+
+.portfolio-header {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.portfolio-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: px;
+  max-width: 850px;
+}
+
+.portfolio-card {
+  margin-left: 50px;
+}
+
+.portfolio-card h2 {
+  font-size: 5rem;
+}
+
+.portfolio-card p {
+  font-size: 5rem;
+}
