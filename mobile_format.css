@@ -1,3 +1,21 @@
+/* -----Color References-----
+
+Dark/General text color: #4c331b
+
+Transparent background color: rgba(255, 255, 255, 0.3)
+Content box shadow color: 0 8px 20px rgba(0,0,0,0.3)
+Hub buttons shadow color: 2px 4px 8px rgba(0,0,0,0.15)
+
+Hub buttons background color: #f0e4d7
+Hub buttons hover color: #e6d5c3
+
+Footer copyright text color: #555
+Footer button background color: #c8a27e
+Footer button hover color: #a67c52
+Footer button text color: white
+*/
+
+/* -----Body----- */
 body {
   background-attachment: scroll !important;
   background-size: cover;
@@ -5,43 +23,47 @@ body {
   background: url("images/hub_background_pic.png");
 }
 
+/* -----Content Box----- */
 .content-box{
     margin-top: -30px;
 }
 
-.profile-header {
+/* -----Header----- */
+.header {
   flex-direction: column; 
   align-items: center;
   text-align: center;
 }
 
-.profile-header img {
+.header img {
   width: 200px;
   height: 200px;
   margin: 0 auto 15px;
   align-content: center;
 }
 
-.profile-header h1 {
+.header h1 {
   font-size: 2rem;
   text-align: center;
   margin-left: 10px;
   align-content: center;
 }
 
-.bigger {
+.caligraphy-header {
   font-size: 3rem;
 }
 
-.smaller {
+.subtext {
   font-size: 0.95rem;
 }
 
+/* -----Button Grid----- */
 .button-grid {
   grid-template-columns: 1fr;
   gap: 12px;
 }
 
+/* -----Footer----- */
 footer {
   text-align: center;
   margin-top: -50px;

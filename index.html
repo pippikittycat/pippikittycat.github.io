@@ -2,29 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
+  <!-- Forces light mode, prevents dark reader. -->
   <meta name="color-scheme" content="light only">
   <meta name="darkreader-lock">
+
+  <!-- Meta data -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brittney Farris's Studio.">
+
+  <!-- Loads favicon with multiple website support. -->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <title>Studio Brittney</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="tablet.css" media="(min-width: 769px) and (max-width: 1024px)">
-  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
-  <link rel="stylesheet" href="stareffect.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style_palette.css">
+  <link rel="stylesheet" href="tablet_format.css" media="(min-width: 769px) and (max-width: 1024px)">
+  <link rel="stylesheet" href="mobile_format.css" media="(max-width: 768px)">
 </head>
 <body>
+
+  <!-- Particle Effect -->
   <div class="particles"></div>
+
+  <!-- Container -->
   <div class="container">
+
+    <!-- .Content-Box is the blurred box behind any further media. -->
     <div class="content-box">
-      <div class="profile-header">
-        <img src="images/Brittneys_picture.jpeg" alt="Profile photo">
+
+      <!-- Header -->
+      <div class="header">
+        <img src="images/Brittneys_picture.jpeg" alt="Brittney Farris's Portrait">
         <h1>THE STUDIO OF <br>
-        <span class="bigger">Brittney Farris</span> <br>
-        <span class="smaller">Developer • Creator • Blogger</span></h1>
+        <span class="calligraphy-header">Brittney Farris</span> <br>
+        <span class="subtext">Developer • Creator • Blogger</span></h1>
       </div>
+
+      <!-- Button Grid -->
       <div class="button-grid">
-        <a href="projects/index.html">Portfolio</a>
+        <a href="portfolio/index.html">Portfolio</a>
         <a href="resume/index.html">Resumes</a>
         <a href="employment/index.html">Employment History</a>
         <a href="blogs/index.html">Blogs</a>
@@ -33,17 +51,22 @@
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
   <footer>
     <p>© 2025 Brittney Farris</p>
     <a href="mailto:junk.stable342@passinbox.com">Email Me!</a>
   </footer>
+
+  <!-- Style to prevent scrollbar from appearing. -->
   <style>
   body {
     margin: 0;
-    overflow: hidden; /* Prevent scrollbars from appearing */
+    overflow: hidden;
   }
 </style>
 
+<!-- Script for moving .content-box around cursor. -->
 <script>
   const container = document.querySelector(".container");
 
@@ -52,11 +75,11 @@
   let currentX = mouseX, currentY = mouseY;
 
   function animate() {
-    // Smooth easing toward mouse
+    // Smooth easing towards mouse.
     currentX += (mouseX - currentX) * 0.05;
     currentY += (mouseY - currentY) * 0.05;
 
-    // Map mouse to a very small translation range (-4px to +4px)
+    // Map mouse to a very small translation range (-4px to +4px).
     const moveX = (currentX / window.innerWidth - 0.5) * 8;
     const moveY = (currentY / window.innerHeight - 0.5) * 8;
 
@@ -70,7 +93,7 @@
     mouseY = e.clientY;
   });
 
-  // Reset gently to center when mouse leaves window
+  // Reset .content-box gently to center when mouse leaves window.
   window.addEventListener("mouseleave", () => {
     mouseX = window.innerWidth / 2;
     mouseY = window.innerHeight / 2;

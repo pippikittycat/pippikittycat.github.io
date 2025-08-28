@@ -1,0 +1,114 @@
+/* -----Color References-----
+
+Dark/General text color: #4c331b
+
+Transparent background color: rgba(255, 255, 255, 0.3)
+Content box shadow color: 0 8px 20px rgba(0,0,0,0.3)
+Hub buttons shadow color: 2px 4px 8px rgba(0,0,0,0.15)
+
+Hub buttons background color: #f0e4d7
+Hub buttons hover color: #e6d5c3
+
+Footer copyright text color: #555
+Footer button background color: #c8a27e
+Footer button hover color: #a67c52
+Footer button text color: white
+*/
+
+
+/* -----Portfolio Header----- */
+.portfolio-header{
+  font-family: "Novar", serif;
+  font-weight: lighter;
+  font-size: 2rem;
+  color: #4c331b;
+  margin: 0;
+  text-align: left;
+  line-height: 1.2;
+  letter-spacing: 3px;
+  position: relative;
+  margin-left: 50px;
+
+}
+
+.portfolio-header h1 {
+  font-family: "Novar", serif;
+  font-weight: lighter;
+  font-size: 2rem;
+  color: #4c331b;
+  margin: 0;
+  text-align: left;
+  line-height: 1.2;
+  letter-spacing: 3px;
+  position: relative;
+  margin-left: -30px; 
+}
+
+.calligraphy-header{
+  margin-top: -10px;
+  margin-left: 15px;
+}
+
+.subtext {
+  margin-left: -30px;
+}
+
+/* -----Portfolio Grid----- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* -----Portfolio Card----- */
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 150px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.portfolio-card h2 {
+  position: relative;
+  font-family: "Dropline", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #4c331b;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.portfolio-card p {
+  position: relative;
+  font-family: "Dropline", sans-serif;
+  font-weight: lighter;
+  font-size: 1rem;
+  color: #4c331b;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin: 0;
+}
