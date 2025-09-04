@@ -305,8 +305,6 @@ header p {
     display: block;
 }
 
-v
-
 footer {
     display: flex;
     gap: clamp(0.5rem, 1%, 1rem);

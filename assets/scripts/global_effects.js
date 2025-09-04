@@ -1,7 +1,7 @@
 // -- BACKGROUND PARTICLE EFFECT -- //
 
 if (window.innerWidth > 768) {
-    const container = document.querySelector(".container");
+    const background = document.body;
 
     let boundX = window.innerWidth;
     let boundY = window.innerHeight;
@@ -16,8 +16,8 @@ if (window.innerWidth > 768) {
      */
     const commandY = [0, 0, 0];
 
-    const easeAmount = 0.1;
-    const moveOuterDivisor = 8;
+    const easeAmount = 0.025;
+    const moveOuterDivisor = 10;
     const moveInnersubtrahend = 0.5;
     const mouseWindowDivisor = 2;
 
@@ -28,16 +28,16 @@ if (window.innerWidth > 768) {
         //X
         commandX[1] += (commandX[0] - commandX[1]) * easeAmount;
         commandX[2] =
-            (commandX[1] / boundX - moveInnersubtrahend) * moveOuterDivisor;
+            -(commandX[1] / boundX - moveInnersubtrahend) * moveOuterDivisor;
 
         //Y
         commandY[1] += (commandY[0] - commandY[1]) * easeAmount;
         commandY[2] =
-            (commandY[1] / boundY - moveInnersubtrahend) * moveOuterDivisor;
+            -(commandY[1] / boundY - moveInnersubtrahend) * moveOuterDivisor;
 
         console.log(commandX, commandY)
 
-        container.style.transform = `translate(${commandX[2]}px, ${commandY[2]}px)`;
+        background.style.backgroundPosition = `${50 + commandX[2]}% ${50 + commandY[2]}%`;
 
         requestAnimationFrame(animate);
     }
