@@ -1,0 +1,348 @@
+/*header h1 font*/
+@font-face {
+    font-family: "Novar";
+    src: url("../fonts/Novar.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*header h2 font*/
+@font-face {
+    font-family: "Priestacy";
+    src: url("../fonts/Priestacy.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*p font*/
+@font-face {
+    font-family: "Dropline";
+    src: url("../fonts/DroplineRegular-Wpegz.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ===== PARTICLE ANIMATION ===== */
+
+.floating-particles-background-effect {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.floating-particles-background-effect .particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 1);
+    filter: blur(.75px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* base opacity, overwritten by JS */
+
+    /* Fall + twinkle animations */
+    animation-name: fall, twinkle;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translate(var(--drift, 0px), 0);
+    }
+
+    100% {
+        transform: translate(var(--drift, 0px), 110vh);
+    }
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: var(--opacity, 0.6);
+    }
+
+    50% {
+        opacity: var(--twinkle-max, 1);
+    }
+}
+
+/* ===== BODY ===== */
+
+body {
+    background: url("../images/background.png") no-repeat center center fixed;
+    background-size: cover;
+    background-color: #fff;
+}
+
+body::before {
+    background: linear-gradient(to bottom, rgba(252, 194, 139, 0.6), rgba(255, 255, 255, 0.3));
+    content: "";
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* ===== CONTAINER ===== */
+
+.container {
+    justify-self: center;
+    display: block;
+    margin-top: clamp(1rem, 2%, 2rem);
+    position: relative;
+    z-index: 1;
+    width: auto;
+    min-height: 60vh;
+}
+
+/* ===== CONTENT BOX ===== */
+
+.content-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: clamp(1rem, 1.5%, 1.5rem);
+    z-index: 1;
+    width: clamp(300px, 80%, 1500px);
+    margin: auto;
+    padding:clamp(0.25rem, 1.5vw, 1.5rem);
+}
+
+/* ===== SETTING BUTTONS ===== */
+
+.settings-button {
+    position: relative;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-family: "Dropline", sans-serif;
+    background: #523a24;
+    color: #ffecdb;
+    border-radius: 0.5rem;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.4);
+    font-weight: 400;
+    width: clamp(6rem, 18vw, 10rem);
+    height: clamp(2rem, 5vw, 3rem);
+    line-height: 1;
+    margin-left: auto;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    padding: 0 .5rem;
+    box-sizing: border-box; 
+}
+
+.settings-button:hover {
+    background: #2b1602;
+    transform: scale(1.05);
+}
+
+.settings-button a {
+    color: #ffeddc;
+    text-decoration: none;
+}
+
+/* ===== HEADER ===== */
+
+header {
+    margin: clamp(-2.5rem, -5.5vw, -3.5rem) auto clamp(1rem, 2vw, 2rem) auto;
+    max-width: clamp(300px, 80%, 1500px);
+    align-items: center;
+    justify-content: flex-start;
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: clamp(0.5rem, 1%, 1rem);
+}
+
+.header-portrait {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    right: auto;
+    border-radius: 50%;
+    width: clamp(9px, 19vw, 19rem);
+    height: auto;
+    object-fit: cover;
+    max-width: 100%;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-top: clamp(-3rem, -5vw, -5rem);
+}
+
+.studio-text {
+    font-family: "Novar", serif;
+    font-weight: lighter;
+    font-size: clamp(2rem, 2vw, 3rem);
+    color: #4c331b;
+    text-align: left;
+    line-height: 1.2;
+    letter-spacing: 0.2vw;
+    position: relative;
+    z-index: 2;
+    margin: 0 0 clamp(0.5rem, 1%, 1rem) 0;
+}
+
+.name-text {
+    margin: clamp(-3rem, -5vw, -5rem) 0 0 clamp(6rem, 5vw, 8rem);
+    font-family: "Priestacy", serif;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 5.5vw, 5.5rem);
+    letter-spacing: 1.5px;
+    position: relative;
+    z-index: 2;
+    color: #4c331b;
+}
+
+header p {
+    color: #4c331b;
+    font-family: "Dropline", sans-serif;
+    font-size: clamp(0.9rem, 1.3vw, 4rem);
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    margin: clamp(-5.5rem, -7.5vw, -7.5rem) auto 0 clamp(23rem, 24vw, 24rem);
+}
+
+/* ===== GRID CONTAINER ===== */
+
+.gridcard-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 1%, 1.5rem);
+    position: relative;
+    align-items: center;
+    align-content: center;
+    z-index: 2;
+    margin-left: 2rem;
+}
+
+/* Medium screens: 2 columns */
+@media (max-width: 900px) {
+    .gridcard-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small screens: 1 column */
+@media (max-width: 600px) {
+    .gridcard-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== GRID CARD ===== */
+.gridcard-container > .gridcard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: clamp(0.5rem, 1%, 1rem);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    z-index: 2;
+    padding: clamp(0.25rem, 1%, 0.5rem);
+    max-width: 25rem;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+.gridcard-container > .gridcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Media wrapper (image + video) ===== */
+
+/* Hover video overlay */
+.hover-video {
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.3s ease-in-out;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    filter: blur(.5px);
+    max-width: 100%;
+    width: 22rem;
+    height: 10rem;
+    border-radius: 5%;
+    margin: 1rem auto;
+}
+
+/* ===== Card label/text ===== */
+.gridcard-container > .gridcard span {
+    font-size: clamp(1.5rem, 1.8vw, 1.8rem);
+    font-family: "Dropline", sans-serif;
+    color: #4c331b;
+    border-radius: /*clamp(.5rem, 1%, 1rem);*/ 12px;
+    text-align: center;
+    font-weight: normal;
+    white-space: nowrap;
+    height: auto;
+    box-sizing: border-box;
+    z-index: 2;
+    padding: clamp(0.5rem, 1%, 1rem);
+    margin: 0 5rem .75 5rem;
+    /*border:#2b1602 2px solid;*/
+    background: linear-gradient(145deg, #fbe8d3, #f7d9b9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+
+footer {
+    margin: clamp(1rem, 1.5vw, 1.5rem) auto 0 auto;
+    display: flex;
+    gap: clamp(0.5rem, 1%, 1rem);
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    color: #180c00;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Dropline", sans-serif;
+    flex-direction: row;
+}
+
+footer a {
+    background: #4c331b;
+    color: #ffecdb;
+    border-radius: clamp(0.5rem, 1%, 0.8rem);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-size: clamp(.9rem, 1vw, 1rem);
+    font-family: "Dropline", sans-serif;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    padding: clamp(0.5rem, 1vw, 0.7rem) clamp(1rem, 2vw, 1.5rem);
+    font-weight: normal;
+}
+
+footer a:hover {
+    background: #2b1602;
+    transform: scale(1.05);
+}
