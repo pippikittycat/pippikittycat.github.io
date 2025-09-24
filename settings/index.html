@@ -1,3 +1,5 @@
+</html>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,33 +12,66 @@
     <link rel="shortcut icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <title>Studio Brittney</title>
-    <link rel="stylesheet" href="../global.css">
-    <link rel="stylesheet" href="../settings/settings.css">
+    <link rel="stylesheet" href="../assets/stylesheets/global.css">
 </head>
 
-<body>
+<body class="settings-page">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="floating-particles-background-effect"></div>
     <div class="container">
-        <div class="floating-particles-background-effect"></div>
-        <nav class="settings-button" aria-label="Site Settings Navigation">
-            <a href="../homepage/index.html">Return Home</a>
-        </nav>
-        <header>
+        <main id="main-content" class="content-box">
+            <header>
+                <nav class="settings-button" aria-label="Site Settings Navigation">
+                    <a href="../homepage/index.html">Return Home</a>
+                </nav>
                 <h1>
                     <span class="studio-text">THE</span>
                     <span class="name-text">Settings</span>
                 </h1>
-        </header>
-        <section class="content-box">
-            <p class="gridcard">
-                Sorry! This area is still a work in progress!<br>
-                Please check back later!
-            </p>
-        </section>
+            </header>
+
+            <nav class="gridcard-container" aria-label="Main site Navigation">
+                <ul aria-label="accessibility-controls">
+                    <li><button id="toggle-particles" aria-pressed="false" class="gridcard">Toggle Particles: On</button>
+                    </li>
+                    <li><button id="toggle-bgvideo" aria-pressed="false" class="gridcard">Toggle Background
+                            Video: On</button></li>
+                    <li><button id="toggle-buttons" aria-pressed="false" class="gridcard">Toggle Button
+                            Animations: On</button></li>
+                    <li><button id="toggle-transitions" aria-pressed="false" class="gridcard">Toggle
+                            Transitions: On</button></li>
+                    <li><button id="toggle-darkmode" aria-pressed="false" class="gridcard">Toggle Dark Mode: Off</button>
+                    </li>
+                    <li><button id="toggle-highcontrastmode" aria-pressed="false" class="gridcard">Toggle High Contrast
+                            Mode: Off</button></li>
+                    <li><button id="toggle-dyslexia" aria-pressed="false" class="gridcard">Toggle Dyslexia-Friendly
+                            Font: Off</button></li>
+                    <li><button id="toggle-fontsize" aria-pressed="false" class="gridcard">Toggle Font Size: Regular</button>
+                    </li>
+                </ul>
+            </nav>
+        </main>
     </div>
+
     <footer>
         <p>© 2025 Brittney Farris</p>
-        <a href="mailto:junk.stable342@passinbox.com" class="button" aria-label="Send an email to Brittney Farris">Email Me!</a>
+
+        <!-- MAIL BUTTON -->
+        <a href="mailto:junk.stable342@passinbox.com" class="footer-button mail-button"
+            aria-label="Email Brittney Farris">
+            <img src="../assets/images/mail-icon-closed.png" class="footer-logo mail-logo">
+            <span class="footer-logo-text mail-logo-text">Email</span>
+        </a>
+
+        <!-- GITHUB BUTTON -->
+        <a href="https://www.github.com" class="footer-button github-button" target="_blank" rel="noopener noreferrer"
+            aria-label="Personal Github">
+            <img src="../assets/images/github-mark.png" class="footer-logo github-logo">
+            <span class="footer-logo-text github-logo-text">Github</span>
+        </a>
     </footer>
-    <script src="../global_effects.js"></script>
+
+    <script src="../assets/scripts/global_effects.js"></script>
 </body>
+
 </html>

@@ -14,65 +14,76 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="floating-particles-background-effect"></div>
+
+    <video autoplay muted loop playsinline id="bg-video" aria-hidden="true" role="presentation">
+        <source src="../assets/videos/portfolio_video_fixed.mp4" type="video/mp4">
+    </video>
+
     <div class="container">
-        <section class="content-box">
-            <a href="../settings/index.html" class="settings-button" aria-label="Site Settings Navigation">Settings</a>
+        <main id="main-content" class="content-box">
             <header>
                 <img src="../assets/images/brittneys_picture.png" class="header-portrait"
                     alt="Brittney Farris's Portrait">
+
                 <h1>
                     <span class="studio-text">THE STUDIO OF</span>
                     <span class="name-text">Brittney Farris</span>
                 </h1>
-                <p>Developer • Creator • Blogger</p>
+
+                <h2>Developer • Creator • Blogger</h2>
+
+                <!-- SETTINGS BUTTON -->
+                <a href="../settings/index.html" class="settings-button" aria-label="Site Settings Navigation">
+                    <img src="../assets/images/settings_icon.png" alt="Settings" class="settings-logo">
+                    <span class="settings-logo-text">Settings</span>
+                </a>
             </header>
-            <nav class="gridcard-container" aria-label="Main Site Navigation">
-                <a href="../portfolio/index.html" class="gridcard">
-                    <video class="hover-video" muted loop playsinline preload="auto"
-                        poster="../assets/images/resume.png">
-                        <source src="../assets/videos/portfolio_video_fixed.mp4" type="video/mp4">
-                    </video>
-                    <span>Portfolio</span>
-                </a>
-                <a href="../resumes/index.html" class="gridcard">
-                    <video class="hover-video" muted loop preload="auto" playsinline>
-                        <source src="../assets/videos/resume_video_fixed.mp4" type="video/mp4">
-                    </video>
-                    <span>Resumes</span>
-                </a>
-                <a href="../employment_history/index.html" class="gridcard">
-                    <video class="hover-video" muted loop preload="auto" playsinline>
-                        <source src="../assets/videos/employment_history_video_fixed.mp4" type="video/mp4">
-                    </video>
-                    <span>Employment History</span>
-                </a>
-                <a href="../blogs/index.html" class="gridcard">
-                    <video class="hover-video" muted loop preload="auto" playsinline>
-                        <source src="../assets/videos/blogs_video_fixed.mp4" type="video/mp4">
-                    </video>
-                    <span>Blogs</span>
-                </a>
-                <a href="../current_projects/index.html" class="gridcard">
-                    <video class="hover-video" muted loop preload="auto" playsinline>
-                        <source src="../assets/videos/current_projects_video_fixed.mp4" type="video/mp4">
-                    </video>
-                    <span>Current Projects</span>
-                </a>
-                <a href="../social_media/index.html" class="gridcard">
-                    <video class="hover-video" muted loop preload="auto" playsinline>
-                        <source src="../assets/videos/social_media_video_fixed.mp4" type="video/mp4">
-                    </video>
-                    <span>Social Media</span>
-                </a>
+
+            <nav class="gridcard-container" aria-label="Main site Navigation">
+                <ul>
+                    <li><a href="../portfolio/index.html" class="gridcard"
+                            data-video="../assets/videos/portfolio_video.mp4" aria-label="Go to Portfolio"><span
+                                aria-hidden="true">Portfolio</span></a></li>
+                    <li><a href="../resumes/index.html" class="gridcard" data-video="../assets/videos/resumes_video.mp4"
+                            aria-label="Go to Resumes"><span aria-hidden="true">Resumes</span></a></li>
+                    <li><a href="../employment_history/index.html" class="gridcard"
+                            data-video="../assets/videos/employment_history_video.mp4"
+                            aria-label="Go to Employment History"><span aria-hidden="true">Employment History</span></a>
+                    </li>
+                    <li><a href="../blogs/index.html" class="gridcard" data-video="../assets/videos/blogs_video.mp4"
+                            aria-label="Go to Blogs"><span aria-hidden="true">Blogs</span></a></li>
+                    <li><a href="../current_projects/index.html" class="gridcard"
+                            data-video="../assets/videos/current_projects_video.mp4"
+                            aria-label="Go to Current Projects"><span aria-hidden="true">Current Projects</span></a>
+                    </li>
+                    <li><a href="../social_media/index.html" class="gridcard"
+                            data-video="../assets/videos/social_media_video.mp4" aria-label="Go to Social Media"><span
+                                aria-hidden="true">Social Media</span></a></li>
+                </ul>
             </nav>
-        </section>
+        </main>
     </div>
+
     <footer>
         <p>© 2025 Brittney Farris</p>
-        <a href="mailto:junk.stable342@passinbox.com" class="button" aria-label="Send an email to Brittney Farris">Email
-            Me!</a>
+
+        <!-- MAIL BUTTON -->
+        <a href="mailto:junk.stable342@passinbox.com" class="footer-button mail-button"
+            aria-label="Email Brittney Farris">
+            <img src="../assets/images/mail-icon-closed.png" class="footer-logo mail-logo">
+            <span class="footer-logo-text mail-logo-text">Email</span>
+        </a>
+
+        <!-- GITHUB BUTTON -->
+        <a href="https://www.github.com" class="footer-button github-button" target="_blank" rel="noopener noreferrer"
+            aria-label="Personal Github">
+            <img src="../assets/images/github-mark.png" class="footer-logo github-logo">
+            <span class="footer-logo-text github-logo-text">Github</span>
+        </a>
     </footer>
+
     <script src="../assets/scripts/global_effects.js"></script>
 </body>
 

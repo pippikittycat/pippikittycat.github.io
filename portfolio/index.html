@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website To-Do List</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 900px;
+    margin: auto;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  .task-text { flex: 1; }
+  .status { font-weight: bold; margin-left: 20px; width: 100px; text-align: center; }
+  button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+  }
+  button:hover { transform: scale(1.1); }
+
+  /* Colors for effort */
+  .low { background-color: #2e7d32; }      /* Green */
+  .medium { background-color: #f9a825; }   /* Yellow */
+  .high { background-color: #c62828; }     /* Red */
+  .optional { background-color: #616161; } /* Gray */
+
+  /* Colors for status buttons */
+  .not-started { background-color: #555; color: white; }
+  .in-progress { background-color: #0288d1; color: white; }
+  .completed { background-color: #4caf50; color: white; }
+</style>
+</head>
+<body>
+
+<h1>Website To-Do List</h1>
+<ul id="todo-list">
+
+  <!-- Low Effort -->
+  <li class="low">
+    <span class="task-text">Make footer font bolder</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="low">
+    <span class="task-text">Increase text size/weight on content buttons</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="low">
+    <span class="task-text">Make “Email Me” button bigger</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="low">
+    <span class="task-text">Change envelope icon to open on hover</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="low">
+    <span class="task-text">Adjust content box colors</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="low">
+    <span class="task-text">Add subtle shadow to content box</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="low">
+    <span class="task-text">Add GitHub link in footer, match styling</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+
+  <!-- Medium Effort -->
+  <li class="medium">
+    <span class="task-text">Make header scale properly across screen sizes</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="medium">
+    <span class="task-text">Add glow/zoom on buttons when video plays</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="medium">
+    <span class="task-text">Add black shadow on buttons when video not playing</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="medium">
+    <span class="task-text">Settings icon: default gear, spin + label bar on hover</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="medium">
+    <span class="task-text">Increase content box opacity when video plays</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="medium">
+    <span class="task-text">Reduce particle opacity when video plays</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+
+  <!-- High Effort -->
+  <li class="high">
+    <span class="task-text">Use HD, watermark-free background videos</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="high">
+    <span class="task-text">Smooth fade in/out for videos on hover or loop end</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="high">
+    <span class="task-text">Add boomerang effect for looping videos</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="high">
+    <span class="task-text">Improve background animations</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="high">
+    <span class="task-text">Optionally add semi-transparent background to footer when video plays</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="high">
+    <span class="task-text">Optimize video load times and animation performance</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="high">
+    <span class="task-text">Test performance across multiple browsers</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+
+  <!-- Optional -->
+  <li class="optional">
+    <span class="task-text">Add ARIA labels and improve accessibility</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="optional">
+    <span class="task-text">Simplify animations for mobile performance</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+  <li class="optional">
+    <span class="task-text">Standardize hover transitions and easing</span>
+    <span class="status">Not Started</span>
+    <div>
+      <button class="not-started">Not Started</button>
+      <button class="in-progress">In Progress</button>
+      <button class="completed">Completed</button>
+    </div>
+  </li>
+
+</ul>
+
+<script>
+  const todoList = document.getElementById('todo-list');
+
+  todoList.querySelectorAll('li').forEach(li => {
+    const statusSpan = li.querySelector('.status');
+    const buttons = li.querySelectorAll('button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const state = button.textContent;
+        statusSpan.textContent = state;
+
+        // Move Completed tasks to bottom
+        if (state === "Completed") {
+          todoList.appendChild(li);
+        } else {
+          // Move back to top among non-completed tasks
+          const firstIncomplete = Array.from(todoList.children).find(child => child.querySelector('.status').textContent !== "Completed");
+          todoList.insertBefore(li, firstIncomplete || null);
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
